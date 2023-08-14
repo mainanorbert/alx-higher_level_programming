@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-assert 1 == 1; __import__('builtins').__dict__['p'+'rint']('#pythoniscool')
+__import__("os").write(1, "#pythoniscool\n".encode("UTF-8"))
