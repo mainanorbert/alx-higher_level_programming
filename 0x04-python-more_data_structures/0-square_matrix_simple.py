@@ -1,9 +1,3 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    sq_matrix = []
-    for row in matrix:
-        sq_row = []
-        for x in row:
-            sq_row.append(x**2)
-        sq_matrix.append(sq_row)
-    return sq_matrix
+    return [list(map(lambda y: y*y, row)) for row in matrix]
