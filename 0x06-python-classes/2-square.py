@@ -9,7 +9,6 @@ class Square:
     def __init__(self, size=0):
         '''initializing a square
 
-
         Args:
         size (int): size of the square'''
         if not isinstance(size, int):
