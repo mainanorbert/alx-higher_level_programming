@@ -18,9 +18,9 @@ class Square:
     @position.setter
     def position(self, value):
         if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError("position must be a tuple of positive integers")
-        if not all(isinstance(x, int) and x > 0 for x in value):
-            raise TypeError("position must be a tuple of positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(i, int) and i >= 0 for i in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     @property
@@ -45,6 +45,7 @@ class Square:
         return self.__size**2
 
     def my_print(self):
+        '''prints squre in # form'''
         if self.__size == 0:
             print("")
             return
