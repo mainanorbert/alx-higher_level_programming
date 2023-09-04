@@ -1,6 +1,5 @@
 #!/usr/bin/python3
+""" Function that defines a rectangle"""
 class Rectangle:
-    """
-    Empty class defining a rectangle
-    """
+    """defining a rectangle"""
     pass
