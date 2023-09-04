@@ -30,18 +30,22 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(my_list), "x")
 
     def test_int_and_floats(self):
-        "Function that tests integers and floats"
+        """Function that tests integers and floats"""
         my_list = [4, 54.4, 5.5, 5.4, 43, 44.4, 33.32, 3]
         self.assertEqual(max_integer(my_list), 54.4)
 
     def test_orderd(self):
-        "Checks for ordered integers"
+        """hecks for ordered integers"""
         my_list = [5, 4, 2]
         self.assertEqual(max_integer(my_list), 5)
     def test_unordered_numbers(self):
         """tests for unordered numbers"""
         my_list = [4, 4, 5, 62, 9]
         self.assertEqual(max_integer(my_list), 62)
+    def test_zero(self):
+        """tests for a zero"""
+        my_list = [0]
+        self.assertEqual(max_integer(my_list), 0)
 
 
 
