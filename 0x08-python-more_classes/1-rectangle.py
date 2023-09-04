@@ -3,12 +3,15 @@
 
 
 class Rectangle:
-    """Defining a class
-    Args:
-        __width (int): the width of rectangle
-        __height (int): the height of a rectangle
-    """
+    """Defining a class """
+
     def __init__(self, width=0, height=0):
+        """ Initializing objects
+        Args:
+            __width (int): the width of rectangle
+            __height (int): the height of a rectangle
+        """
+
         self.__width = wid  th
         self.__height = height
 
