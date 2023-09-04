@@ -61,7 +61,7 @@ class Rectangle:
         else:
             for i in range(self.height):
                 for x in range(self.width):
-                    str_rep += self.print_symbol
+                    str_rep += str(self.print_symbol)
                 if i is not self.height - 1:
                     str_rep += '\n'
         return str_rep
@@ -74,3 +74,21 @@ class Rectangle:
         """prints message when rectangle object is destroyed"""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() == rect_2.area():
+            return rect_1
+        if rect_1.area() > rect_2.area():
+            return rect_1
+        else:
+            return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """creates and returns Rectangle instance"""
+        return cls(size, size)
