@@ -61,7 +61,7 @@ class Rectangle:
         else:
             for i in range(self.height):
                 for x in range(self.width):
-                    str_rep += self.print_symbol
+                    str_rep += str(self.print_symbol)
                 if i is not self.height - 1:
                     str_rep += '\n'
         return str_rep
@@ -74,4 +74,3 @@ class Rectangle:
         """prints message when rectangle object is destroyed"""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
-
