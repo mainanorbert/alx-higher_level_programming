@@ -1,0 +1,84 @@
+==============================
+Using 2-matrix_divided.py
+==============================
+``matrix_divided(..)`` takes a matrix and divisor as arguments and returns a divided matrix
+
+==============================
+If all elements are not int/float, type error is raised
+==============================
+
+>>> matrix_div = __import__('2-matrix_divided').matrix_divided
+
+
+==============================
+Testing matrix with integers
+==============================
+>>> my_mat = [[6, 12, 6], [12, 3, 6]]
+>>> print(matrix_div(my_mat, 3))
+[[2.0, 4.0, 2.0], [4.0, 1.0, 2.0]]
+
+
+==============================
+Testing matrix with floates
+==============================
+>>> matrix_div([[3.2, 4.3], [2.3, 2.1]], 4)
+[[0.8, 1.07], [0.57, 0.53]]
+
+==============================
+Testing for mixture of int and floats
+==============================
+>>> matrix_div([[3.4, 4, 4], [3, 2.4, 3.1]], 4)
+[[0.85, 1.0, 1.0], [0.75, 0.6, 0.78]]
+
+==============================
+Testing for negative floats and integers
+==============================
+>>> matrix_div([[-3, -4.2, 3.4], [-5, -6.5, -6.6]], 3)
+[[-1.0, -1.4, 1.13], [-1.67, -2.17, -2.2]]
+
+==============================
+Testing for unequal rows
+==============================
+>>> matrix_div([[2.3, 3.3], [3.2, 4, 3]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+==============================
+Testing for none integers/floats
+==============================
+>>> matrix_div([[3, "w", "3"], ["3", 3, "3"]], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+==============================
+Empty matrix
+==============================
+>>> matrix_div([[]], 3)
+[[]]
+
+
+==============================
+Testing a list which is not a matrix
+==============================
+>>> matrix_div([2, 4, 5], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+==============================
+dividing with zero(0)
+==============================
+
+>>> matrix_div([[3, 4, 5], [7, 4, 3]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+
+==============================
+Dividing with non int/float
+==============================
+>>> matrix_div([[3, 4], [2, 4]], "3")
+Traceback (most recent call last):
+TypeError: div must be a number
