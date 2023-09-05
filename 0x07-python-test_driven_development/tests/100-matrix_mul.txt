@@ -1,0 +1,67 @@
+=======================================
+Importing the module
+======================================
+>>> mul_mat = __import__('100-matrix_mul').matrix_mul
+>>> mul_mat([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7.0, 10.0], [15.0, 22.0]]
+
+=============================
+multiplying negative
+=============================
+>>> mul_mat([[-1, -2], [-3, -4]], [[-1, -2], [-3, -4]])
+[[7.0, 10.0], [15.0, 22.0]]
+
+=========================
+Trying non-lists for m_a
+========================
+>>> mul_mat([-1, -2, -3, -4], [[-1, -2], [-3, -4]])
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+=====================================
+trying non-list for m_b
+====================================
+>>> mul_mat([[-1, -2], [-3, -4]], [-1, -2, -3, -4])
+Traceback (most recent call last):
+TypeError: m_b must be a list of lists
+
+==================================
+m_b not a list
+=================================
+>>> mul_mat([[-1, -2], [-3, -4]], -4)
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+==================================
+m_a not a list
+=================================
+>>> mul_mat(2, [[-1, -2], [-3, -4]])
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+==================================
+m_a empty
+=================================
+>>> mul_mat([[]], [[2, 3], [2, 3]])
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+==================================
+m_b empty
+=================================
+>>> mul_mat([[-1, -2], [-3, -4]], [[]])
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+=============================
+m_a Non int
+=============================
+>>> mul_mat([[-1, "e"], [-3, -4]], [[-1, -2], [-3, -4]])
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+=============================
+>>> mul_mat([[-1, 4], [-3, -4]], [["3", -2], [-3, -4]])
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
