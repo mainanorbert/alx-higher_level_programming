@@ -1,0 +1,23 @@
+============================================
+importing a module for matrix multiplication
+===========================================
+>>> mult_mat = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+==================================
+Multiplying 2 matrices
+=================================
+>>> print(mult_mat([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[ 7 10]
+ [15 22]]
+
+===================================
+===================================
+>>> print(mult_mat([[1, 2]], [[3, 4], [5, 6]]))
+[[13 16]]
+
+=========================
+Trying non-lists for m_a
+========================
+>>> print(mult_mat([-1, -2, -3, -4], [[-1, -2], [-3, -4]]))
+Traceback (most recent call last):
+ValueError: shapes (4,) and (2,2) not aligned: 4 (dim 0) != 2 (dim 0)
