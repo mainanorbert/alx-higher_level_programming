@@ -1,4 +1,4 @@
-#!/usr/bin/pythn3
+#!/usr/bin/python3
 def say_my_name(first_name, last_name=""):
     """
     Function says name
