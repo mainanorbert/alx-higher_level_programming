@@ -60,6 +60,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_negative(self):
         self.assertEqual(max_integer([-4]), -4)
 
+    def test_non_int(self):
+        with self.assertRaises(TypeError):
+            max_integer([3, 4, 4, "my name"])
+
 
 if __name__ == '__main__':
     unittest.main()
