@@ -68,6 +68,10 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(None)
 
+    def test_max_end(self):
+        """largest end"""
+        self.assertEqual(max_integer([2, 3, 4, 9]), 9)
+
 
 if __name__ == '__main__':
     unittest.main()
