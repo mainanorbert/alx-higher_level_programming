@@ -38,24 +38,27 @@ class TestMaxInteger(unittest.TestCase):
         """hecks for ordered integers"""
         my_list = [5, 4, 2]
         self.assertEqual(max_integer(my_list), 5)
+
     def test_unordered_numbers(self):
         """tests for unordered numbers"""
         my_list = [4, 4, 5, 62, 9]
         self.assertEqual(max_integer(my_list), 62)
+
     def test_zero(self):
         """tests for a zero"""
         my_list = [0]
         self.assertEqual(max_integer(my_list), 0)
+
     def test_middle(self):
         """max at middle"""
         self.assertEqual(max_integer([2, 3, 9, 4, 6]), 9)
+
     def test_one(self):
         """one element"""
         self.assertEqual(max_integer([4]), 4)
+
     def test_negative(self):
         self.assertEqual(max_integer([-4]), -4)
-
-
 
 
 if __name__ == '__main__':
