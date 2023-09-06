@@ -52,6 +52,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_one(self):
         """one element"""
         self.assertEqual(max_integer([4]), 4)
+    def test_negative(self):
+        self.assertEqual(max_integer([-4]), -4)
 
 
 
