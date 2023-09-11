@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""defining function to check typee of object"""
+
 
 def is_same_class(obj, a_class):
 
