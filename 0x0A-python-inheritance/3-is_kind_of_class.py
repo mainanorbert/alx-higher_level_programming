@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""checks the kind of class that is inherited"""
+
 
 def is_kind_of_class(obj, a_class):
     """returns true if object is instance of
@@ -7,7 +9,7 @@ def is_kind_of_class(obj, a_class):
         obj (any type): can be of any typw
         a_class: class of the object
     Returns:
-        True if is instance otherwise false
+        returns true if is instance otherwise false
     """
     if isinstance(obj, a_class):
         return True
