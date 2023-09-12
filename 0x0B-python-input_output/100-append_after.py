@@ -11,10 +11,10 @@ def append_after(filename="", search_string="", new_string=""):
         new_string(str): the string to add
     """
     changed_lines = []
-    with open(filename, 'r') as f:
+    with open(filename) as f:
         for line in f:
             changed_lines.append(line)
             if search_string in line:
-                changed_lines.append(new_string + '\n')
+                changed_lines.append(new_string)
     with open(filename, 'w') as f:
         f.writelines(changed_lines)
