@@ -1,8 +1,7 @@
 #!/usr/bin/python3
+"""returning JSON representation"""
 import json
 
-
-"""returning JSON representation"""
 
 def to_json_string(my_obj):
     """serializing an object"""
