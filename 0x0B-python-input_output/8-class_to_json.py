@@ -3,7 +3,13 @@
 
 
 class class_to_json(obj):
-    """function returning dict representation of simple data structure"""
+    """function returning dict representation of simple data structure
+
+    Args:
+        obj(any): object of any type
+    Returns:
+        returns dictionary of all methods and objects
+    """
     attr_dict = {}
     for atr in dir(obj):
         atr_v = getattr(obj, atr)
