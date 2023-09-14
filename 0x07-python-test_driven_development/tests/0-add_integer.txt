@@ -43,3 +43,10 @@ TypeError: a must be an integer
 >>> add_integer("hello", "hell")
 Traceback (most recent call last):
 TypeError: a must be an integer
+
+=====================
+Testing for infinity
+=====================
+>>> add_integer('inf')
+Traceback (most recent call last):
+TypeError: a must be an integer
