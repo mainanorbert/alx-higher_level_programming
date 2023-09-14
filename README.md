@@ -1,4 +1,5 @@
 # A Higher Level Programmming Language Repository
+![My Python Logo](https://media.istockphoto.com/id/1189210101/photo/python-programming-language-concept-woman-developer-with-her-hand-holding-modern-sign-with.webp?b=1&s=170667a&w=0&k=20&c=2olSCm8U7KNUS6RuCFZcgrPvWy_H_QMgyLbAZWnFJ28=)
 ### This repository shall have codes on Python programming language
 ## The following concepts are covered by each project:
 ### **1. x00. Python - Hello, World**
