@@ -1,6 +1,6 @@
 # A Higher Level Programmming Language Repository
 ![My Python Logo](https://media.istockphoto.com/id/1189210101/photo/python-programming-language-concept-woman-developer-with-her-hand-holding-modern-sign-with.webp?b=1&s=170667a&w=0&k=20&c=2olSCm8U7KNUS6RuCFZcgrPvWy_H_QMgyLbAZWnFJ28=)
-### This repository shall have codes on Python programming language
+### This repository has projects containing Python programming language
 ## The following concepts are covered by each project:
 ### **1. x00. Python - Hello, World**
 - What is the Zen of Python
@@ -23,3 +23,10 @@
 - What does return a function that does not use any return statement
 - Scope of variables
 - What’s a traceback
+### **3. 0x02. Python - import & modules**
+- How to import functions from another file
+- How to use imported functions
+- How to create a module
+- How to use the built-in function dir()
+- How to prevent code in your script from being executed when imported
+- How to use command line arguments with your Python programs
