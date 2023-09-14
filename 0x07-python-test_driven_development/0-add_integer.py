@@ -18,6 +18,4 @@ def add_integer(a, b=98):
     a = int(a)
     b = int(b)
     sum = a + b
-    if sum == -float('inf') or sum == float('inf'):
-        return 98
     return sum
