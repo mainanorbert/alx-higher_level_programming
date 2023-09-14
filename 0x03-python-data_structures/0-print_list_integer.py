@@ -9,4 +9,4 @@ def print_list_integer(my_list=[]):
         my_list(int): list of integers
     """
     for x in my_list:
-        print("{:d}".format(x))
+        print("{}".format(x))
