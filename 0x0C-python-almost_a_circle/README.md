@@ -6,6 +6,6 @@
 4. What is *args and how to use it
 5. What is **kwargs and how to use it
 6. How to handle named arguments in a function
-[Follow Twiter](twitter.com/mainanorbert2)
+[Follow Twiter](twitter.com/mainanorbert2)  
 [My LinkedIn](linkedin.com/in/norbert-osiemo-0256a4144/)
 
