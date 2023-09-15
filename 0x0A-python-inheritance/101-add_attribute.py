@@ -12,7 +12,7 @@ def add_attribute(my_obje, attr_name, att_value):
     Raises:
         TypeError: if attribute exists
     """
-    if not hasattr(my_obje, attr_name):
+    if hasattr(my_obje, "__dict__"):
         setattr(my_obje, attr_name, att_value)
     else:
         raise TypeError("can't add new attribute")
