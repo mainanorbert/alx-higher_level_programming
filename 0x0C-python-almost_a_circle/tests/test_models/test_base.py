@@ -45,7 +45,7 @@ class Test_Instantation(unittest.TestCase):
         self.assertEqual(b'hi', Base(b'hi').id)
 
     def test_documentation(self):
-        """ tests for documentation """
+        """ testing for for documentation """
         self.assertTrue(len(Base.__doc__) >= 20, "Short or no documentation")
         self.assertTrue(len(Base.to_json_string.__doc__) >= 20, "Short doc")
         self.assertTrue(len(Base.save_to_file.__doc__) >= 20, "Short doc")
@@ -60,6 +60,16 @@ class Test_Instantation(unittest.TestCase):
                                      'tests/test_models/test_base.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
+
+    def test_to_json_string(self):
+        self.assertEqual(Base.to_json_string(
+            [{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}]),
+                '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
+
+    def test_save_to_file(self):
+        Rectangle.save_to_file([Rectangle(10, 7, 2, 8, 5)])
+        with open("Rectangle.json", "r") as f:
+            self.assertTrue(len(f.read()) == 53)
 
 
 if __name__ == '__main__':
