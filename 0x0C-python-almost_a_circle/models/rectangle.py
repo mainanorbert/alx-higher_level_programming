@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 from models.base import Base
-"""Rectangle class for rectangle"""
+"""Rectangle class """
 
 
 class Rectangle(Base):
-    """defining a class rectangle"""
+    """defining a class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing rectangle
@@ -15,10 +15,10 @@ class Rectangle(Base):
             x (int): x coordinate
             y (int): y coordinates
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -67,7 +67,6 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """setter for y value"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -75,8 +74,7 @@ class Rectangle(Base):
         self.__y = value
 
     def update(self, *args, **kwargs):
-        """updating with args and kwargs"""
-        if args and len(args) > 0:
+        if args and len(args > 0):
             if len(args) > 0:
                 self.id = args[0]
             if len(args) > 1:
@@ -114,6 +112,5 @@ class Rectangle(Base):
                 f"{self.__width}/{self.__height}")
 
     def to_dictionary(self):
-        """converts an object to dictionary"""
         return {"id": self.id, "width": self.width, "height": self.height,
                 "x": self.x, "y": self.y}
