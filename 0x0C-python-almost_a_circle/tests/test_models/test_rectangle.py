@@ -32,6 +32,10 @@ class Test_Rect(unittest.TestCase):
         r = Rectangle(3, 4, 3, 2)
         self.assertEqual(r.y, 2)
 
+    def test_id(self):
+        r = Rectangle(1,2, 3, 3,2)
+        self.assertEqual(r.id, 2)
+
     def test_for_documentation(self):
         """ testing for documentation """
         self.assertTrue(len(Rectangle.__doc__) >= 20, "too short Short doc")
