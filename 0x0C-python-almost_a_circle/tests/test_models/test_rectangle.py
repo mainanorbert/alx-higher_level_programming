@@ -29,4 +29,4 @@ class Test_Rect(unittest.TestCase):
 
     def test_y_getter(self):
         r = Rectangle(3, 4, 3, 2)
-        self.assertEqual(r.y, 2)
+        self.assertEqual(r.y, 22)
