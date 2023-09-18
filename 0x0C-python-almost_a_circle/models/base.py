@@ -4,11 +4,22 @@ import json
 
 
 class Base:
-    """class base for my project"""
+    """class base for my project
+
+    The base class for all other rectangles
+
+    Attributes:
+        __nb_objects (int): number of instances
+    """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """initialization of base class
+
+        Args:
+            id (int): the id of instances
+        """
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
