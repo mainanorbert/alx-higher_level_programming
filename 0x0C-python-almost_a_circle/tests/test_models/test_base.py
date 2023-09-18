@@ -71,6 +71,17 @@ class Test_Instantation(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             self.assertTrue(len(f.read()) == 53)
 
+    def test_from_json_string(self):
+        self.assertEqual(Base.from_json_string(
+            '[{"height": 4, "width": 10, "id": 89}]'),
+            [{'height': 4, 'width': 10, 'id': 89}])
+
+    def test_create(self):
+        x = Rectangle(3, 5, 1, 2, 7)
+        y = x.to_dictionary()
+        x1 = Rectangle.create(**y)
+        self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(x1))
+
 
 if __name__ == '__main__':
     unittest.main()
