@@ -63,6 +63,34 @@ class Test_Rect(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual("[Rectangle] (89) 4/5 - 2/3", str(r1))
 
+    def test_width_str(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("e", 3)
+
+    def test_height_str(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(4, "e")
+
+    def test_value_width(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-2, 4)
+
+    def test_value_height(self):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(2, -4)
+
+    def test_value_width(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-2, 4)
+
+    def test_value_width(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-2, 4)
+
+    def test_value_width(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-2, 4)
+
 
 if __name__ == "__main__":
     unittest.main()
