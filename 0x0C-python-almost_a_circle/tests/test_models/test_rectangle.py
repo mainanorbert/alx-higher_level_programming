@@ -91,6 +91,22 @@ class Test_Rect(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle(-2, 4)
 
+    def test_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 3, "hi")
+
+    def test_x_value(self):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            Rectangle(2, 3, -2)
+
+    def test_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(3, 4, 3, "hi")
+
+    def test_y_value(self):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            Rectangle(3, 4, 3, -5)
+
 
 if __name__ == "__main__":
     unittest.main()
