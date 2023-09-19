@@ -107,6 +107,9 @@ class Test_Rect(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(3, 4, 3, -5)
 
+    def test_area(self):
+        self.assertEqual(Rectangle(4, 4).area(), 16)
+
 
 if __name__ == "__main__":
     unittest.main()
