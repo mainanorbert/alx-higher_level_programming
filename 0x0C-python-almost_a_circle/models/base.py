@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defining a class called base"""
 import json
+import csv
 
 
 class Base:
@@ -77,3 +78,34 @@ class Base:
                 return [cls.create(**obj) for obj in obj_list]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializing and deserializing in csv"""
+        file_name = cls.__name__ + ".csv"
+        dict_list = [obj.to_dictionary() for obj in list_objs]
+        with open(file_name, "w", newline="") as f:
+            my_writer = csv.writer(f)
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    field_names = ["id", "width", "height", "x", "y"]
+                else:
+                    field_names = ["id", "size", "x", "y"]
+                my_writer.writerow(field_names)
+                for obj_dict in dict_list:
+                    my_writer.writerow([obj_dict[x] for x in field_names])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializing from a csv file"""
+        file_name = cls.__name__ + ".csv"
+        objs_list = []
+        with open(file_name, "r", newline="") as f:
+            my_reader = csv.DictReader(f)
+            for row in my_reader:
+                row = {key: int(value) for key, value in row.items()}
+                obj = cls.create(**row)
+                objs_list.append(obj)
+            return objs_list
