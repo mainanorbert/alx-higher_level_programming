@@ -33,8 +33,16 @@ class Test_Rect(unittest.TestCase):
         self.assertEqual(r.y, 2)
 
     def test_id(self):
-        r = Rectangle(1,2, 3, 3,2)
+        r = Rectangle(1, 2, 3, 3, 2)
         self.assertEqual(r.id, 2)
+
+    def test_pycodestyle(self):
+        """ testing pycodestyle """
+        pystyle = pycodestyle.StyleGuide(quiet=True)
+        result = pystyle.check_files(['models/rectangle.py',
+                                     'tests/test_models/test_rectangle.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
     def test_for_documentation(self):
         """ testing for documentation """
@@ -49,7 +57,7 @@ class Test_Rect(unittest.TestCase):
         r = Rectangle(2, 2, 2, 2, 2)
         r.update()
         self.assertEqual("[Rectangle] (2) 2/2 - 2/2", str(r))
-    
+
     def test_args(self):
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89, 2, 3, 4, 5)
