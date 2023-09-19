@@ -82,6 +82,5 @@ class Test_Instantation(unittest.TestCase):
         x1 = Rectangle.create(**y)
         self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(x1))
 
-
 if __name__ == '__main__':
     unittest.main()
