@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 from models.base import Base
-"""Rectangle class """
+"""Rectangle class defined"""
 
 
 class Rectangle(Base):
-    """defining a class"""
+    """defining a class for rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing rectangle
@@ -74,7 +74,8 @@ class Rectangle(Base):
         self.__y = value
 
     def update(self, *args, **kwargs):
-        if args and len(args > 0):
+        """updating with kwargs"""
+        if args and len(args) > 0:
             if len(args) > 0:
                 self.id = args[0]
             if len(args) > 1:
@@ -112,5 +113,6 @@ class Rectangle(Base):
                 f"{self.__width}/{self.__height}")
 
     def to_dictionary(self):
+        """converts object to dictionary"""
         return {"id": self.id, "width": self.width, "height": self.height,
                 "x": self.x, "y": self.y}
