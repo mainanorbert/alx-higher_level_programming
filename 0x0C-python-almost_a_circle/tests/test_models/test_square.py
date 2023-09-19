@@ -9,7 +9,9 @@ import pycodestyle
 
 
 class Test_Square(unittest.TestCase):
-
+    """
+    Testing classs for square
+    """
     def test_documentation(self):
         """ testing for the code on documentation """
         self.assertTrue(len(Square.__doc__) >= 20, "Short doc string")
