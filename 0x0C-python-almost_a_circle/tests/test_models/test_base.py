@@ -66,6 +66,12 @@ class Test_Instantation(unittest.TestCase):
             [{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}]),
                 '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
 
+    def test_empty_string(self):
+        self.assertEqual(Base.to_json_string([]), "[]")
+
+    def test_none_string(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
+
     def test_save_to_file(self):
         Rectangle.save_to_file([Rectangle(10, 7, 2, 8, 5)])
         with open("Rectangle.json", "r") as f:
