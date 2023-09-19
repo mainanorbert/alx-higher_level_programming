@@ -12,6 +12,13 @@ class Test_Square(unittest.TestCase):
     """
     Testing classs for square
     """
+    def setUp(self):
+        """ a setup setup method """
+        Base._Base__nb_objects = 0
+        self.s1 = Square(10, 5, 2, 11)
+        self.s2 = Square(4, 4, 1)
+        self.s3 = Square(3, 2, 2)
+
     def test_documentation(self):
         """ testing for the code on documentation """
         self.assertTrue(len(Square.__doc__) >= 20, "Short doc string")
@@ -28,8 +35,8 @@ class Test_Square(unittest.TestCase):
                          "Found no code style errors (and warnings).")
 
     def test_id(self):
-        b = Square(2)
-        self.assertEqual(b.id, 1)
+        b = Square(2, 3, 4, 3)
+        self.assertEqual(b.id, 3)
 
     def test_unique_id(self):
         b = Square(4, 3, 3, 4)
