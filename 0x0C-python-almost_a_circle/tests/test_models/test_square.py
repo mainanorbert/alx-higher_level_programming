@@ -1,5 +1,6 @@
 import unittest
-import io
+from io import StringIO
+from unittest.mock import patch
 import os
 from contextlib import redirect_stdout
 from models.square import Square
@@ -50,6 +51,11 @@ class Test_Square(unittest.TestCase):
         b = Square(2, 2, 2, 2)
         b.update(size=1, id=2)
         self.assertEqual("[Square] (2) 2/2 - 1", str(b))
+
+    def test_diplay(self):
+        with patch('sys.stdout', new_callable=StringIO) as std:
+            Square(2).display()
+        self.assertEqual("##\n##\n", std.getvalue())
 
 
 if __name__ == "__main__":
