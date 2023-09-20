@@ -1,4 +1,5 @@
-import io
+from io import StringIO
+from unittest.mock import patch
 import sys
 import unittest
 from models.base import Base
@@ -109,6 +110,11 @@ class Test_Rect(unittest.TestCase):
 
     def test_area(self):
         self.assertEqual(Rectangle(4, 4).area(), 16)
+
+    def test_display(self):
+        with patch('sys.stdout', new_callable=StringIO) as std:
+            Rectangle(2, 3).display()
+        self.assertEqual("##\n##\n##\n", std.getvalue())
 
 
 if __name__ == "__main__":
