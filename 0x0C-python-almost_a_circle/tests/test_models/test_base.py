@@ -88,6 +88,13 @@ class Test_Instantation(unittest.TestCase):
         x1 = Rectangle.create(**y)
         self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(x1))
 
+    def test_csv(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        my_list = [r1]
+        Rectangle.save_to_file_csv(my_list)
+        list_out = Rectangle.load_from_file_csv()
+        self.assertEqual(str(r1), str(list_out[0]))
+
 
 if __name__ == '__main__':
     unittest.main()
