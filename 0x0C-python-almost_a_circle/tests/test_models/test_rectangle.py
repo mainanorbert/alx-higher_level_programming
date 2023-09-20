@@ -116,6 +116,10 @@ class Test_Rect(unittest.TestCase):
             Rectangle(2, 3).display()
         self.assertEqual("##\n##\n##\n", std.getvalue())
 
+    def test_str(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+
 
 if __name__ == "__main__":
     unittest.main()
