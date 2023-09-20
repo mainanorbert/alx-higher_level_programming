@@ -60,6 +60,10 @@ class Test_Square(unittest.TestCase):
     def test_area(self):
         self.assertEqual(Square(2).area(), 4)
 
+    def test_str(self):
+        s1 = Square(3, 1, 3)
+        self.assertEqual(str(s1), "[Square] (3) 1/3 - 3")
+
 
 if __name__ == "__main__":
     unittest.main()
