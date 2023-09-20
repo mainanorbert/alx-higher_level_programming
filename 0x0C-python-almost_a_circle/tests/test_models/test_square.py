@@ -57,6 +57,9 @@ class Test_Square(unittest.TestCase):
             Square(2).display()
         self.assertEqual("##\n##\n", std.getvalue())
 
+    def test_area(self):
+        self.assertEqual(Square(2).area(), 4)
+
 
 if __name__ == "__main__":
     unittest.main()
