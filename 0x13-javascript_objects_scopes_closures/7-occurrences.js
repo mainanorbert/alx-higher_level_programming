@@ -4,7 +4,7 @@ exports.nbOccurences = function (list, searchElement) {
     if (currentEle === searchElement) {
       return cnt + 1;
     } else {
-	    return cnt;
+      return cnt;
     }
-  }, 0)
+  }, 0);
 };
