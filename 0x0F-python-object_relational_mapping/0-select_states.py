@@ -12,3 +12,5 @@ if __name__ == "__main__":
     # [print(state) for state in db_obj.fetchall()]
     for state in db_obj.fetchall():
         print(state)
+    db_obj.close()
+    db.close()
