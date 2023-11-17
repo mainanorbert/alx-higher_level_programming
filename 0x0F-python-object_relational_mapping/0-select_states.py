@@ -6,10 +6,10 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1],
+    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3])
     db_obj = db.cursor()
-    db_obj.execute("SELECT * FROM `states` BY id ASC")
+    db_obj.execute("SELECT * FROM `states`")
     for state in db_obj.fetchall():
         print(state)
 
