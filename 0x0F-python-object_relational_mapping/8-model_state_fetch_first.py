@@ -2,12 +2,12 @@
 """
 Prints first state object from db
 """
-from sys import arg
+from sys import argv as arg
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(arg[1], arg[1], arg[2]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
