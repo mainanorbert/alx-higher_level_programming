@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Listing all objects from db
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -11,5 +14,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    for s in session.query(State).order_by(State.id):
+        print("{}: {}".format(s.id, s.name))
