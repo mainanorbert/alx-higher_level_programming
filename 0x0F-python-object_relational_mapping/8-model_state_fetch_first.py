@@ -5,7 +5,7 @@ Prints first state object from db
 from sys import argv as arg
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import Base, State
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
@@ -14,6 +14,7 @@ if __name__ == "__main__":
     session = Session()
 
     s = session.query(State).order_by(State.id).first()
+    Base.metadata.create_all(engine)
     if s is None:
         print("Nothing")
     else:
