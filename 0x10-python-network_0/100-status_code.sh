@@ -1,3 +1,3 @@
 #!/bin/bash
 # Bash script that sends a request to a URL passed as an argument
-curl -o /dev/null -I -s -w "%{http_code}" "$1"
+curl -os /dev/null -w "%{http_code}" "$1"
