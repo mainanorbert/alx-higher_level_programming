@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-import urllib.request
-import urllib.parse
+"""
+module that fetches header id
+"""
+from urllib.request import urlopen
 from sys import argv
-"""Python script that takes in a URL and an email,
-sends a POST request to the passed URL with the email
-as a parameter, and displays the body of theresponse (decoded in utf-8)"""
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    value = {"email": sys.argv[2]}
-    data = urllib.parse.urlencode(value).encode("ascii")
-    request = urllib.request.Request(url, data)
-    with urllib.request.urlopen(request) as response:
-        print(response.read().decode("utf-8"))
+    data = f"email={argv[2]}".encode('utf-8')
+    with urlopen(argv[1], data=data) as response:
+        content = response.read().decode('utf-8')
+        print(content)
