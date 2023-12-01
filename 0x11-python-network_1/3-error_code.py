@@ -11,7 +11,7 @@ import urllib.request
 
 if __name__ == "__main__":
     myurl = sys.argv[1]
-    req = urllib.request.Request(url)
+    req = urllib.request.Request(myurl)
     try:
         with urllib.request.urlopen(req) as res:
             print(res.read().decode("ascii"))
