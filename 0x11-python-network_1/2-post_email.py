@@ -8,8 +8,9 @@ as a parameter, and displays the body of theresponse (decoded in utf-8)"""
 
 
 if __name__ == "__main__":
-    data = urllib.parse.urlencode({'email': argv[2]}).encode('ascii')
-    req = urllib.request.Request(argv[1], data)
-    with urllib.request.urlopen(req) as response:
-        content = response.read().decode('utf-8')
-        print(content)
+    url = sys.argv[1]
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(value).encode("ascii")
+    request = urllib.request.Request(url, data)
+    with urllib.request.urlopen(request) as response:
+        print(response.read().decode("utf-8"))
