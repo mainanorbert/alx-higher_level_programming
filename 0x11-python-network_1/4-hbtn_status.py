@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """Fetching from https://intranet.hbtn.io/status."""
-import requests
+from requests import get
 
 
 if __name__ == "__main__":
-    res = requests.get("https://intranet.hbtn.io/status")
+    content = get('https://alx-intranet.hbtn.io/status').text
     print("Body response:")
-    print("\t- type: {}".format(type(res.text)))
-    print("\t- content: {}".format(res.text))
+    print(f"\t- type: {type(content)}")
+    print(f"\t- content: {content}")
