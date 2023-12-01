@@ -10,6 +10,6 @@ from sys import argv
 
 if __name__ == "__main__":
     my_data = f"email={argv[2]}".encode('utf-8')
-    with urlopen(argv[1], my_data=data) as response:
+    with urlopen(argv[1], data=my_data) as response:
         content = response.read().decode('utf-8')
         print(content)
