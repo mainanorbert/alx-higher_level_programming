@@ -11,6 +11,7 @@ usage:
 
 
 if __name__ == "__main__":
-    user_auth = requests.auth.HTTPBasicAuth(argv[1], argv[2])
-    req = requests.get("https://api.github.com/user", auth=user_auth)
-    print(req.json().get("id"))
+    # auth = requests.auth.HTTPBasicAuth(argv[1], argv[2]).json()
+    res = requests.get("https://api.github.com/user",
+                       auth=(argv[1], argv[2])).json()
+    print(res.get("id"))
